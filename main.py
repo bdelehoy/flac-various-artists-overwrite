@@ -23,10 +23,11 @@ if __name__ == "__main__":
 
                 # Get song title
                 if len(title_parts) == 2:
-                    # Cleanly split into artist and song title
+                    # Original title tag was cleanly split into artist and song title
                     new_song_title = title_parts[1]
                 elif len(title_parts) > 2:
-                    # Split into multiple tokens (uncommon)
+                    # Original title tag was split into multiple tokens (uncommon)
+                    # Assumes that the other tokens are associated with the song title and not the artist
                     new_song_title = ARTIST_SONG_SEPARATOR_STRING.join(title_parts[1:])
                 else:
                     print(f"    Incompatible title (unexpected song title tokens): {title}")
